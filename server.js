@@ -6,6 +6,8 @@ const express = require('express');
 
 // Start up an instance of app
 const app = express()
+
+const port = process.env.PORT || 5000
 /* Middleware*/
 
 const geocode = require('./utils/geocode')
@@ -46,6 +48,6 @@ app.get('/weather', (req, res) => {
     })
 })
 
-app.listen(5000, () => {
-    console.log('Server is up on port 5000.')
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}`)
 })
